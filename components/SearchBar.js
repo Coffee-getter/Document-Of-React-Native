@@ -1,3 +1,12 @@
+/*
+ * @Author: heye
+ * @Date: 2022-06-22 17:47:49
+ * @LastEditors: heye
+ * @LastEditTime: 2022-06-24 15:49:44
+ * @FilePath: \speed-up-cli\new-project\components\SearchBar.js
+ * @Description: 搜索栏
+ *
+ */
 import React from 'react';
 import { Text, View, TouchableOpacity, Image, Button } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';

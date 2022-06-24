@@ -2,7 +2,7 @@
  * @Author: heye
  * @Date: 2022-06-22 17:46:25
  * @LastEditors: heye
- * @LastEditTime: 2022-06-24 14:28:04
+ * @LastEditTime: 2022-06-24 15:48:41
  * @FilePath: \speed-up-cli\new-project\components\Categorys.js
  * @Description: 食品菜单栏
  *

@@ -2,7 +2,7 @@
  * @Author: heye
  * @Date: 2022-06-22 17:47:49
  * @LastEditors: heye
- * @LastEditTime: 2022-06-24 14:27:25
+ * @LastEditTime: 2022-06-24 15:52:02
  * @FilePath: \speed-up-cli\new-project\components\Restaurants.js
  * @Description: 滑动餐厅卡片
  *
@@ -15,8 +15,7 @@ const YELP_API_KEY =
 export default function Restaurants() {
     const [restaurants, setRestaurants] = useState([]);
     const getRestaurantFromYelp = () => {
-        const apiUrl =
-            'https://api.yelp.com/v3/businesses/search?term=restaurant&&location=SanDiego';
+        const apiUrl = 'https://api.yelp.com/v3/businesses/search?term=restaurant&&location=SanDiego';
         const apiOption = {
             headers: {
                 Authorization: `Bearer ${YELP_API_KEY}`,
@@ -79,11 +78,7 @@ const RestaurantImage = (props) => {
                     top: 10,
                 }}
             >
-                <Ionicon
-                    name="heart-outline"
-                    style={{ color: '#fff' }}
-                    size={24}
-                ></Ionicon>
+                <Ionicon name="heart-outline" style={{ color: '#fff' }} size={24}></Ionicon>
             </TouchableOpacity>
         </View>
     );

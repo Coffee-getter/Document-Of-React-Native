@@ -1,12 +1,14 @@
+/*
+ * @Author: heye
+ * @Date: 2022-06-22 17:47:49
+ * @LastEditors: heye
+ * @LastEditTime: 2022-06-24 15:51:57
+ * @FilePath: \speed-up-cli\new-project\components\HeaderTabs.js
+ * @Description: 头部tab栏
+ *
+ */
 import React, { useState } from 'react';
-import {
-    Text,
-    View,
-    TouchableOpacity,
-    SafeAreaView,
-    Platform,
-    StatusBar,
-} from 'react-native';
+import { Text, View, TouchableOpacity, SafeAreaView, Platform, StatusBar } from 'react-native';
 //状态栏高度
 const statusBarHeight = StatusBar.currentHeight;
 //是否为IOS系统
@@ -25,16 +27,8 @@ export default function HeaderTabs() {
                     marginTop: isIOS ? 0 : statusBarHeight,
                 }}
             >
-                <HeaderTab
-                    name="Delivery"
-                    activeTab={activeTab}
-                    setActiveTab={setActiveTab}
-                />
-                <HeaderTab
-                    name="PickUp"
-                    activeTab={activeTab}
-                    setActiveTab={setActiveTab}
-                />
+                <HeaderTab name="Delivery" activeTab={activeTab} setActiveTab={setActiveTab} />
+                <HeaderTab name="PickUp" activeTab={activeTab} setActiveTab={setActiveTab} />
             </View>
         </SafeAreaView>
     );
