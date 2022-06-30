@@ -2,35 +2,29 @@
  * @Author: heye
  * @Date: 2022-06-22 17:47:49
  * @LastEditors: heye
- * @LastEditTime: 2022-06-24 15:51:57
+ * @LastEditTime: 2022-06-30 10:22:36
  * @FilePath: \speed-up-cli\new-project\components\HeaderTabs.js
  * @Description: 头部tab栏
  *
  */
 import React, { useState } from 'react';
-import { Text, View, TouchableOpacity, SafeAreaView, Platform, StatusBar } from 'react-native';
-//状态栏高度
-const statusBarHeight = StatusBar.currentHeight;
-//是否为IOS系统
-const isIOS = Platform.OS === 'ios';
+import { Text, View, TouchableOpacity, Platform, StatusBar } from 'react-native';
+import SafeAreaView, { SafeAreaProvider } from 'react-native-safe-area-view';
 
 export default function HeaderTabs() {
     const [activeTab, setActiveTab] = useState('Delivery');
     return (
-        <SafeAreaView>
-            <View
-                style={{
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    padding: 15,
-                    backgroundColor: '#fff',
-                    marginTop: isIOS ? 0 : statusBarHeight,
-                }}
-            >
-                <HeaderTab name="Delivery" activeTab={activeTab} setActiveTab={setActiveTab} />
-                <HeaderTab name="PickUp" activeTab={activeTab} setActiveTab={setActiveTab} />
-            </View>
-        </SafeAreaView>
+        <View
+            style={{
+                flexDirection: 'row',
+                justifyContent: 'center',
+                padding: 15,
+                backgroundColor: '#fff',
+            }}
+        >
+            <HeaderTab name="Delivery" activeTab={activeTab} setActiveTab={setActiveTab} />
+            <HeaderTab name="PickUp" activeTab={activeTab} setActiveTab={setActiveTab} />
+        </View>
     );
 }
 const HeaderTab = (props) => {

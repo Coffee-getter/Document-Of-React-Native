@@ -2,7 +2,7 @@
  * @Author: heye
  * @Date: 2022-06-22 17:47:49
  * @LastEditors: heye
- * @LastEditTime: 2022-06-24 15:52:02
+ * @LastEditTime: 2022-06-30 10:23:05
  * @FilePath: \speed-up-cli\new-project\components\Restaurants.js
  * @Description: 滑动餐厅卡片
  *
@@ -34,22 +34,23 @@ export default function Restaurants() {
     }, []);
     return (
         <ScrollView horizontal={false} showsVerticalScrollIndicator={false}>
-            {restaurants?.map((item, index) => {
-                return (
-                    <TouchableOpacity
-                        key={index}
-                        style={{
-                            marginTop: 10,
-                            padding: 10,
-                            paddingHorizontal: 15,
-                            backgroundColor: '#fff',
-                        }}
-                    >
-                        <RestaurantImage item={item} />
-                        <RestaurantInfo item={item} />
-                    </TouchableOpacity>
-                );
-            })}
+            {restaurants &&
+                restaurants.map((item, index) => {
+                    return (
+                        <TouchableOpacity
+                            key={index}
+                            style={{
+                                marginTop: 5,
+                                padding: 10,
+                                paddingHorizontal: 15,
+                                backgroundColor: '#fff',
+                            }}
+                        >
+                            <RestaurantImage item={item} />
+                            <RestaurantInfo item={item} />
+                        </TouchableOpacity>
+                    );
+                })}
         </ScrollView>
     );
 }
@@ -100,7 +101,7 @@ const RestaurantInfo = (props) => {
             >
                 <Text
                     style={{
-                        fontSize: 14,
+                        fontSize: 15,
                         fontWeight: '700',
                     }}
                 >
@@ -108,8 +109,8 @@ const RestaurantInfo = (props) => {
                 </Text>
                 <Text
                     style={{
-                        fontSize: 13,
-                        color: '#999',
+                        fontSize: 12,
+                        color: '#aaa',
                         fontWeight: '700',
                     }}
                 >
