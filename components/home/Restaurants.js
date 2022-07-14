@@ -2,8 +2,8 @@
  * @Author: heye
  * @Date: 2022-06-22 17:47:49
  * @LastEditors: heye
- * @LastEditTime: 2022-06-30 10:23:05
- * @FilePath: \speed-up-cli\new-project\components\Restaurants.js
+ * @LastEditTime: 2022-07-14 11:20:30
+ * @FilePath: \new-project\components\home\Restaurants.js
  * @Description: 滑动餐厅卡片
  *
  */
@@ -12,10 +12,11 @@ import { Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 const YELP_API_KEY =
     'grFvm1UgHJ4wPdtuP5vHuggdo9NYpEOAa0Vti6I-xz_g7iH-VjvNQhqHdnrNTf_r5YZf0OQ2NK9tshDtygyQIKMjkJRwc3tYnafG-R86ACVL51MhW4lJlOk8HziwYnYx';
-export default function Restaurants() {
+export default function Restaurants({ navigation }) {
     const [restaurants, setRestaurants] = useState([]);
     const getRestaurantFromYelp = () => {
-        const apiUrl = 'https://api.yelp.com/v3/businesses/search?term=restaurant&&location=SanDiego';
+        const apiUrl =
+            'https://api.yelp.com/v3/businesses/search?term=restaurant&&location=SanDiego';
         const apiOption = {
             headers: {
                 Authorization: `Bearer ${YELP_API_KEY}`,
@@ -44,6 +45,9 @@ export default function Restaurants() {
                                 padding: 10,
                                 paddingHorizontal: 15,
                                 backgroundColor: '#fff',
+                            }}
+                            onPress={() => {
+                                navigation.navigate('RestaurantDetail', { item: item });
                             }}
                         >
                             <RestaurantImage item={item} />

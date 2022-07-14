@@ -2,8 +2,8 @@
  * @Author: heye
  * @Date: 2022-06-24 14:50:51
  * @LastEditors: heye
- * @LastEditTime: 2022-06-30 10:37:01
- * @FilePath: \speed-up-cli\new-project\screens\Home.js
+ * @LastEditTime: 2022-07-14 14:30:31
+ * @FilePath: \new-project\screens\Home.js
  * @Description:
  *
  */
@@ -20,7 +20,7 @@ const statusBarHeight = StatusBar.currentHeight;
 //是否为IOS系统
 const isIOS = Platform.OS === 'ios';
 
-export default function Home() {
+export default function Home({ navigation }) {
     return (
         <View
             style={{
@@ -34,7 +34,7 @@ export default function Home() {
             {/* <ScrollView showsVerticalScrollIndicator={false}> */}
             <Categorys />
             {/* </ScrollView> */}
-            <Restaurants />
+            <Restaurants navigation={navigation} />
             <Divider width={1} />
             <ButtomTabs />
         </View>
