@@ -2,7 +2,7 @@
  * @Author: heye
  * @Date: 2022-06-30 10:40:52
  * @LastEditors: heye
- * @LastEditTime: 2022-07-14 14:32:39
+ * @LastEditTime: 2022-07-15 11:18:26
  * @FilePath: \new-project\components\restaurantDetail\About.js
  * @Description: 餐厅相关页
  * @argu
@@ -12,11 +12,11 @@
  * [description] 格式化的餐厅描述
  *
  */
-import { PinDropSharp } from '@material-ui/icons';
-import React, { useState, useEffect } from 'react';
-import { Text, View, TouchableOpacity, Image, Button } from 'react-native';
+import { PinDropSharp } from '@material-ui/icons'
+import React, { useState, useEffect } from 'react'
+import { Text, View, TouchableOpacity, Image, Button } from 'react-native'
 
-const base = '../../assets/images';
+const base = '../../assets/images'
 const yelpRestautantInfo = {
     name: 'Farmhouse Kitchen Thai Cuisine',
     image_url: require(`${base}/about.jpg`),
@@ -24,30 +24,30 @@ const yelpRestautantInfo = {
     reviews: '1500',
     rating: 4.5,
     categories: [{ title: 'Thai' }, { title: 'Comfort Food' }],
-};
+}
 export default function About({ restaurantItem, navigation }) {
-    let { name, image_url, price, review_count, rating, categories } = restaurantItem;
-    const formattedCategonies = categories?.map((cat) => cat.title).join(' · ');
+    let { name, image_url, price, review_count, rating, categories } = restaurantItem
+    const formattedCategonies = categories?.map((cat) => cat.title).join(' · ')
     const description = `${formattedCategonies} ${
         price ? ' · ' + price : null
-    }  ·  🎫  ·  ${rating}⭐(${review_count})+`;
+    }  ·  🎫  ·  ${rating}⭐(${review_count})+`
 
     const backToHome = () => {
-        navigation.navigate('Home');
-    };
+        navigation.navigate('Home')
+    }
 
     return (
         <View>
             <BackButton backToHome={backToHome} />
-            <RestaurantImage image={yelpRestautantInfo.image_url} />
+            <RestaurantImage image={image_url} />
             <RestaurantTitle name={name} />
             <RestaurantDes description={description} />
         </View>
-    );
+    )
 }
 const RestaurantImage = (props) => {
-    return <Image source={props.image} style={{ width: '100%', height: 180 }} />;
-};
+    return <Image source={{ uri: props.image_url }} style={{ width: '100%', height: 180 }} />
+}
 const RestaurantTitle = (props) => {
     return (
         <View
@@ -65,8 +65,8 @@ const RestaurantTitle = (props) => {
                 {props.name}
             </Text>
         </View>
-    );
-};
+    )
+}
 const RestaurantDes = (props) => {
     return (
         <View
@@ -77,15 +77,15 @@ const RestaurantDes = (props) => {
         >
             <Text style={{ fontWeight: '500', color: '#555' }}>{props.description}</Text>
         </View>
-    );
-};
+    )
+}
 
 const BackButton = (props) => {
     return (
         <TouchableOpacity
             style={{
                 position: 'absolute',
-                top: 40,
+                top: 50,
                 left: 10,
                 backgroundColor: '#777',
                 borderRadius: 20,
@@ -97,5 +97,5 @@ const BackButton = (props) => {
         >
             <Text style={{ color: 'white' }}>返回</Text>
         </TouchableOpacity>
-    );
-};
+    )
+}
